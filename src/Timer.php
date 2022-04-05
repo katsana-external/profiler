@@ -197,6 +197,6 @@ class Timer implements Contracts\Timer
     {
         $message = $this->message ?: '{name} took {lapse} seconds.';
 
-        return Str::replace($message, $context);
+        return Str::replace(array_keys($context), $context, $message);
     }
 }
